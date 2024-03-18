@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes</title>
+    <style>
+        html {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            min-width: 50vw;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quizzes</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nisi et felis placerat consectetur at ac
+        libero. Sed id venenatis neque, nec facilisis ex. Aliquam erat volutpat. Nunc ullamcorper rutrum dui nec
+        dignissim. Proin id sapien interdum, vulputate nunc vel, tristique elit. Vivamus nec euismod turpis.</p>
+
+    <form id="emailForm">
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject"><br>
+        <label for="body">Body:</label><br>
+        <textarea id="body" name="body"></textarea><br><br>
+        <button type="button" onclick="sendEmail()">Send Email</button>
+    </form>
+    <p id="thankYouMessage" style="display: none;">Thank you!</p>
+
+    <script>
+        function sendEmail() {
+            var subject = document.getElementById("subject").value;
+            var body = document.getElementById("body").value;
+
+            var mailtoLink = "mailto:jordnguyen43@gmail.com" +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(body);
+
+            window.location.href = mailtoLink;
+            document.getElementById("thankYouMessage").style.display = "block";
+        }
+    </script>
+
+    <img src="blogpost-image.jpg" alt="Blog Post Image">
+
+    <p>Nullam nulla tortor, bibendum non elit at, condimentum facilisis nibh. Duis dignissim lobortis tristique. Integer
+        et nunc vel ex consectetur posuere at ac elit. Vestibulum nulla erat, luctus sed pharetra at, ultricies et nisl.
+        Aenean non quam urna. Suspendisse potenti. Proin luctus libero in dolor mollis, eu posuere justo rhoncus.</p>
+</body>
+
+</html>
