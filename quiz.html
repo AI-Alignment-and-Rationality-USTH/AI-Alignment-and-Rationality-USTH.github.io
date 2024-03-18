@@ -46,8 +46,6 @@
         dignissim. Proin id sapien interdum, vulputate nunc vel, tristique elit. Vivamus nec euismod turpis.</p>
 
     <form id="emailForm">
-        <label for="subject">Subject:</label><br>
-        <input type="text" id="subject" name="subject"><br>
         <label for="body">Body:</label><br>
         <textarea id="body" name="body"></textarea><br><br>
         <button type="button" onclick="sendEmail()">Send Email</button>
@@ -56,11 +54,10 @@
 
     <script>
         function sendEmail() {
-            var subject = document.getElementById("subject").value;
             var body = document.getElementById("body").value;
 
             var mailtoLink = "mailto:jordnguyen43@gmail.com" +
-                "?subject=" + encodeURIComponent(subject) +
+                "?subject=quiz submission" +
                 "&body=" + encodeURIComponent(body);
 
             window.location.href = mailtoLink;
